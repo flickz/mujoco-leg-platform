@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="Leg test platform supported demo">
+  <compiler angle="radian" meshdir="meshes" autolimits="true" inertiafromgeom="false" />
+  <option timestep="0.001" gravity="0 0 -9.81" integrator="implicitfast" iterations="100" tolerance="1e-10" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <headlight ambient=".4 .4 .4" diffuse=".6 .6 .6" />
+  </visual>
+  <statistic center="0 0 .33" extent=".9" />
+  <default>
+    <joint axis="0 1 0" damping=".06" armature=".001" />
+    <geom mass="0" friction=".8 .005 .0001" solref=".008 1" />
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" />
+    </default>
+    <default class="collision">
+      <geom group="3" rgba=".1 .7 .8 .3" />
+    </default>
+  </default>
+  <asset>
+    <texture name="ground_checker" type="2d" builtin="checker" rgb1="0.22 0.26 0.29" rgb2="0.3 0.34 0.37" width="512" height="512" />
+    <material name="ground_material" texture="ground_checker" texuniform="true" texrepeat="5 5" reflectance="0" specular="0.1" shininess="0.1" />
+    <mesh name="carriage_00" file="carriage_00.obj" inertia="shell" />
+    <mesh name="frame_01" file="frame_01.obj" inertia="shell" />
+    <mesh name="carriage_02" file="carriage_02.obj" inertia="shell" />
+    <mesh name="carriage_03" file="carriage_03.obj" inertia="shell" />
+    <mesh name="frame_04" file="frame_04.obj" inertia="shell" />
+    <mesh name="frame_05" file="frame_05.obj" inertia="shell" />
+    <mesh name="frame_06" file="frame_06.obj" inertia="shell" />
+    <mesh name="carriage_07" file="carriage_07.obj" inertia="shell" />
+    <mesh name="carriage_08" file="carriage_08.obj" inertia="shell" />
+    <mesh name="thigh_09" file="thigh_09.obj" inertia="shell" />
+    <mesh name="thigh_10" file="thigh_10.obj" inertia="shell" />
+    <mesh name="thigh_11" file="thigh_11.obj" inertia="shell" />
+    <mesh name="thigh_12" file="thigh_12.obj" inertia="shell" />
+    <mesh name="thigh_13" file="thigh_13.obj" inertia="shell" />
+    <mesh name="thigh_14" file="thigh_14.obj" inertia="shell" />
+    <mesh name="horn_15" file="horn_15.obj" inertia="shell" />
+    <mesh name="horn_16" file="horn_16.obj" inertia="shell" />
+    <mesh name="horn_17" file="horn_17.obj" inertia="shell" />
+    <mesh name="shin_18" file="shin_18.obj" inertia="shell" />
+    <mesh name="shin_19" file="shin_19.obj" inertia="shell" />
+    <mesh name="wheel_20" file="wheel_20.obj" inertia="shell" />
+    <mesh name="shin_21" file="shin_21.obj" inertia="shell" />
+    <mesh name="wheel_22" file="wheel_22.obj" inertia="shell" />
+    <mesh name="rod_23" file="rod_23.obj" inertia="shell" />
+  </asset>
+  <worldbody>
+    <light pos="0 -1 2" dir="0 .3 -1" directional="true" />
+    <geom name="floor" type="plane" pos="0 0 0" size="0 0 .05" material="ground_material" contype="1" conaffinity="1" condim="4" priority="1" friction="0.8 0.005 0.0001" solref="0.008 1" solimp="0.9 0.95 0.001" margin="0" />
+    <body name="frame">
+      <inertial mass="4.787459983300101" pos="2.450453271e-15 0.01797716796 0.08615934274" fullinertia="0.232390092 0.296697384 0.2312576681 -5.382643658e-15 -7.78923875e-15 -0.0247548434" />
+      <geom name="frame_01" mesh="frame_01" rgba="0.7215686275 0.7529411765 0.7921568627 1" class="visual" />
+      <geom name="frame_04" mesh="frame_04" rgba="0.4666666667 0.5019607843 0.5490196078 1" class="visual" />
+      <geom name="frame_05" mesh="frame_05" rgba="0.7254901961 0.5843137255 0.4 1" class="visual" />
+      <geom name="frame_06" mesh="frame_06" rgba="0.6274509804 0.6274509804 0.6274509804 1" class="visual" />
+      <geom name="collision_part_03_00" type="box" pos="-0.225 0.0905 0.338" size="0.01 0.01 0.3" class="collision" />
+      <geom name="collision_part_04_00" type="box" pos="-0.225 0 0.028" size="0.01 0.225 0.01" class="collision" />
+      <geom name="collision_part_05_00" type="box" pos="0.225 0.0905 0.338" size="0.01 0.01 0.3" class="collision" />
+      <geom name="collision_part_06_00" type="box" pos="0.225 0 0.028" size="0.01 0.225 0.01" class="collision" />
+      <geom name="collision_part_07_00" type="box" pos="0 -0.215 0.028" size="0.213 0.01 0.01" class="collision" />
+      <geom name="collision_part_08_00" type="box" pos="0 0.215 0.028" size="0.213 0.01 0.01" class="collision" />
+      <geom name="collision_part_09_00" type="box" pos="0 0.0905 0.625" size="0.213 0.01 0.01" class="collision" />
+      <geom name="collision_part_31_00" type="box" pos="0 0 0.009" size="0.275 0.225 0.009" class="collision" />
+    </body>
+    <body name="carriage" pos="6.271301637e-18 0 0.4198767521">
+      <joint name="carriage_z" type="slide" axis="0 0 1" ref="0.2504586106914035" range="0 0.3615818585" damping="2" armature="0" />
+      <body name="thigh" pos="0 0 0">
+        <joint name="hip" type="hinge" ref="0.0" range="0 1.570796327" />
+        <body name="horn" pos="0 0 0">
+          <joint name="knee" type="hinge" ref="-1.7549241206893385e-06" range="0 0.7853981634" />
+          <body name="rod" pos="-0.02298136714 0 0.01928358796">
+            <joint name="rod_pivot" type="hinge" ref="1.7549241206893385e-06" />
+            <inertial mass="0.00766008134884538" pos="-0.09 -0.01333198703 9.929834732e-13" fullinertia="1.309105293e-07 2.590403896e-05 2.582873308e-05 0 0 0" />
+            <geom name="rod_23" mesh="rod_23" rgba="0.9607843137 0.9607843137 0.9647058824 1" class="visual" />
+            <site name="rod_end" pos="-0.18 0 1.98563388e-12" size=".002" group="4" />
+          </body>
+          <inertial mass="0.07735573925427747" pos="-0.0006461054649 0.006293377762 0.000604072785" fullinertia="1.273046748e-05 2.187784869e-05 1.287057546e-05 -9.138589271e-07 8.559610914e-07 8.442839517e-07" />
+          <geom name="horn_15" mesh="horn_15" rgba="0.1098039216 0.5607843137 0.5647058824 1" class="visual" />
+          <geom name="horn_16" mesh="horn_16" rgba="0.9607843137 0.9607843137 0.9647058824 1" class="visual" />
+          <geom name="horn_17" mesh="horn_17" rgba="0.7960784314 0.7960784314 0.7960784314 1" class="visual" />
+        </body>
+        <body name="shin" pos="-0.18 0 1.985467346e-12">
+          <joint name="shin_pivot" type="hinge" ref="-1.7549241206893385e-06" />
+          <body name="wheel" pos="0.1149068357 -0.0448 -0.0964179398">
+            <joint name="wheel" type="hinge" ref="0" />
+            <inertial mass="0.3050781765648425" pos="1.029631769e-06 0.0001245329084 -1.609775199e-06" fullinertia="0.0002272415674 0.000398873505 0.0002272418579 5.498559037e-11 -8.564704936e-09 -1.278486558e-10" />
+            <geom name="wheel_20" mesh="wheel_20" rgba="1 1 1 1" class="visual" />
+            <geom name="wheel_22" mesh="wheel_22" rgba="0.9607843137 0.9607843137 0.9647058824 1" class="visual" />
+            <site name="wheel_axis" size=".002" group="4" />
+            <geom name="tyre_collision" type="cylinder" size="0.05500009652 0.013" quat=".7071067812 .7071067812 0 0" condim="4" class="collision" />
+          </body>
+          <inertial mass="0.41795362124123914" pos="0.1000727068 -0.02917504501 -0.08397026991" fullinertia="0.0007027696739 0.001469267703 0.0008822488936 9.830534222e-05 0.0005089280913 -8.248939337e-05" />
+          <geom name="shin_18" mesh="shin_18" rgba="0.8980392157 0.9137254902 0.9019607843 1" class="visual" />
+          <geom name="shin_19" mesh="shin_19" rgba="0.7960784314 0.7960784314 0.7960784314 1" class="visual" />
+          <geom name="shin_21" mesh="shin_21" rgba="0.9607843137 0.9607843137 0.9647058824 1" class="visual" />
+          <site name="shin_end" pos="-0.02298136714 0 0.01928358796" size=".002" group="4" />
+          <geom name="shin_collision" type="capsule" fromto="0.01723602535 -0.004 -0.01446269097 0.09767081033 -0.004 -0.08195524883" size=".012" class="collision" />
+        </body>
+        <inertial mass="1.0856475386649562" pos="-0.009709532886 0.03372970465 0.001056361934" fullinertia="0.001589102372 0.003043423394 0.003134944989 -0.0004324236918 0.000187716601 4.598260843e-05" />
+        <geom name="thigh_09" mesh="thigh_09" rgba="0.8980392157 0.9137254902 0.9019607843 1" class="visual" />
+        <geom name="thigh_10" mesh="thigh_10" rgba="0.168627451 0.2 0.2196078431 1" class="visual" />
+        <geom name="thigh_11" mesh="thigh_11" rgba="0.9607843137 0.9607843137 0.9647058824 1" class="visual" />
+        <geom name="thigh_12" mesh="thigh_12" rgba="0.7960784314 0.7960784314 0.7960784314 1" class="visual" />
+        <geom name="thigh_13" mesh="thigh_13" rgba="1 1 1 1" class="visual" />
+        <geom name="thigh_14" mesh="thigh_14" rgba="0.1098039216 0.5607843137 0.5647058824 1" class="visual" />
+        <geom name="thigh_collision" type="capsule" fromto="-0.027 -0.004 2.978173264e-13 -0.153 -0.004 1.68765002e-12" size=".012" class="collision" />
+      </body>
+      <inertial mass="2.320550847258263" pos="5.43146468e-05 0.08097173336 3.825550149e-05" fullinertia="0.005381391031 0.04947251385 0.04490063797 -4.072795037e-06 -1.723648837e-06 -7.552790818e-07" />
+      <geom name="carriage_00" mesh="carriage_00" rgba="0.7215686275 0.7529411765 0.7921568627 1" class="visual" />
+      <geom name="carriage_02" mesh="carriage_02" rgba="0.1176470588 0.1254901961 0.137254902 1" class="visual" />
+      <geom name="carriage_03" mesh="carriage_03" rgba="0.4666666667 0.5019607843 0.5490196078 1" class="visual" />
+      <geom name="carriage_07" mesh="carriage_07" rgba="0.168627451 0.2 0.2196078431 1" class="visual" />
+      <geom name="carriage_08" mesh="carriage_08" rgba="0.9607843137 0.9607843137 0.9647058824 1" class="visual" />
+      <site name="carriage_imu" size=".002" group="4" />
+      <geom name="collision_part_02_00" type="box" pos="2.148427398e-17 0.0755 1.665334537e-16" size="0.265 0.0025 0.09" class="collision" />
+    </body>
+  </worldbody>
+  <equality>
+    <connect name="parallel_loop" site1="rod_end" site2="shin_end" solref=".003 1" solimp=".999 .9999 .0001" />
+    <joint name="carriage_lock" joint1="carriage_z" polycoef="0 0 0 0 0" />
+  </equality>
+  <contact>
+    <exclude body1="frame" body2="carriage" />
+    <exclude body1="carriage" body2="horn" />
+  </contact>
+  <actuator>
+    <position name="hip_servo" joint="hip" kp="160" kv="8" ctrlrange="0 1.570796327" forcerange="-11 11" />
+    <position name="knee_servo" joint="knee" kp="160" kv="8" ctrlrange="0 0.7853981634" forcerange="-11 11" />
+    <motor name="wheel_motor" joint="wheel" gear="1" ctrlrange="-2 2" forcerange="-2 2" />
+  </actuator>
+  <sensor>
+    <jointpos name="hip_position" joint="hip" />
+    <jointvel name="hip_velocity" joint="hip" />
+    <jointpos name="knee_position" joint="knee" />
+    <jointvel name="knee_velocity" joint="knee" />
+    <jointpos name="wheel_position" joint="wheel" />
+    <jointvel name="wheel_velocity" joint="wheel" />
+    <jointpos name="carriage_z_position" joint="carriage_z" />
+    <jointvel name="carriage_z_velocity" joint="carriage_z" />
+    <accelerometer name="carriage_accel" site="carriage_imu" />
+    <gyro name="carriage_gyro" site="carriage_imu" />
+  </sensor>
+</mujoco>

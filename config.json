@@ -1,0 +1,85 @@
+{
+  "timestep_s": 0.001,
+  "hip_range_deg": [
+    0,
+    90
+  ],
+  "knee_range_deg": [
+    0,
+    45
+  ],
+  "servo_kp": 160,
+  "servo_kv": 8,
+  "wheel_torque_limit_Nm": 2,
+  "density": {
+    "aluminium": 2700,
+    "steel": 7850,
+    "PETG": 1270,
+    "TPU": 1200,
+    "plywood": 650,
+    "delrin": 1410
+  },
+  "print_solid_fraction": 0.6,
+  "TPU_solid_fraction": 0.85,
+  "RS06_total_kg": 0.621,
+  "RS06_output_kg": 0.071,
+  "DD9015_total_kg": 0.534,
+  "DD9015_output_kg": 0.2,
+  "bearings_total_kg": 0.0275,
+  "note": "RS06 total mass and torque ratings use manufacturer specifications. Other masses, printed solid fractions, output splits, damping, friction and wheel motor limits remain estimates. Rated/peak constant torque caps do not model heating or voltage/speed derating.",
+  "gravity_m_s2": [
+    0,
+    0,
+    -9.81
+  ],
+  "RS06": {
+    "source": "https://github.com/RobStride/Product_Information",
+    "source_specification_date": "2026-07-13",
+    "verified_date": "2026-10-06",
+    "rated_torque_Nm": 11,
+    "peak_torque_Nm": 36,
+    "rated_speed_rpm": 100,
+    "no_load_speed_rpm": 480,
+    "no_load_speed_tolerance_percent": 10,
+    "rated_voltage_V": 48,
+    "voltage_range_V": [
+      15,
+      60
+    ],
+    "reduction_ratio": 9,
+    "mass_kg": 0.621,
+    "rating_note": "Rated torque requires manufacturer specified heat sinking. Peak duration and voltage-dependent torque-speed curve are not modeled."
+  },
+  "demo_RS06_torque_mode": "rated",
+  "free_RS06_torque_mode": "rated",
+  "floor": {
+    "height_m": 0,
+    "checker_square_m": 0.1,
+    "rgb1": [
+      0.22,
+      0.26,
+      0.29
+    ],
+    "rgb2": [
+      0.3,
+      0.34,
+      0.37
+    ],
+    "friction": [
+      0.8,
+      0.005,
+      0.0001
+    ],
+    "condim": 4,
+    "solref": [
+      0.008,
+      1
+    ],
+    "solimp": [
+      0.9,
+      0.95,
+      0.001
+    ],
+    "note": "Infinite static plane at plywood underside. Friction is an initial estimate, not measured. condim 4 enables sliding and torsional friction; rolling resistance is not enabled."
+  }
+}
